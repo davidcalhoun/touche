@@ -1,5 +1,5 @@
 # Touché
-Mouse event to touch event mapping for testing touch interfaces with desktop browsers.  This means that touchstart, touchmove, and touchend are hooked up to mousedown, mousemove, and mouseend, respectively.  This is generally recommended for testing purposes
+Mouse event to touch event mapping for testing touch interfaces with desktop browsers.  This means that touchstart, touchmove, and touchend are hooked up to mousedown, mousemove, and mouseend, respectively.  This is generally recommended for testing purposes.
 
 Inspired by Phantom Limb (https://github.com/brian-c/phantom-limb), but seeking less bloat (no graphics) and more conformance to the properties of actual touch objects (test with http://frontendstuff.com/javascript/examples/touch.html), and much more minimal code.
 
@@ -15,11 +15,11 @@ document.addEventListener('touchend', function(e){}, false);
 ````
 
 ## Interacting with the touch events
-The main difference with touch events are the touch event arrays:
+The main difference with touch events are the touch event arrays, which Touché gladly simulates for you:
 
-1    touchstart has e.touches
-1    touchmove has e.touches and e.changedTouches
-1    touchend has e.changedTouches
+    1 touchstart has e.touches
+    1 touchmove has e.touches and e.changedTouches
+    1 touchend has e.changedTouches
 
 Because a mouse cursor is representative of just one finger, these simulated arrays will only contain one element (i.e. e.touches[0]) corresponding to one touch.
 
