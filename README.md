@@ -12,6 +12,7 @@ You hook up events just like you would on a device (libraries will use the same 
 document.addEventListener('touchstart', function(e){}, false);
 document.addEventListener('touchmove', function(e){}, false);
 document.addEventListener('touchend', function(e){}, false);
+````
 
 ## Interacting with the touch events
 The main difference with touch events are the touch event arrays:
@@ -30,6 +31,7 @@ document.addEventListener('touchstart', function(e){
 	e.touches[0].screenX;
 	e.touches[0].screenY;
 }, false);
+````
 
 (see http://frontendstuff.com/javascript/examples/touch.html for more information on the event properties)
 
