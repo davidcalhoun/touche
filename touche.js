@@ -12,7 +12,9 @@ if(!('touchstart' in window)) {
 		
 		// touches/targetTouches/changedTouches emulation
 		var touchesObj = [{
-			identifier: 0,
+			// identifier: unique id for the touch event (lazy.. just hooking it into the timestamp)
+			// not using Date.now() just for greater support
+			identifier: (new Date()).getTime(),
 			pageX: e.pageX,
 			pageY: e.pageY,
 			clientX: e.clientX,
