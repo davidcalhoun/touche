@@ -1,5 +1,5 @@
 # Touché
-Touch to mouse event mapping for testing touch interfaces with desktop browsers.  This means that touchstart, touchmove, and touchend are hooked up to mousedown, mousemove, and mouseend, respectively.  This is generally recommended for testing purposes
+Mouse event to touch event mapping for testing touch interfaces with desktop browsers.  This means that touchstart, touchmove, and touchend are hooked up to mousedown, mousemove, and mouseend, respectively.  This is generally recommended for testing purposes
 
 Inspired by Phantom Limb (https://github.com/brian-c/phantom-limb), but seeking less bloat (no graphics) and more conformance to the properties of actual touch objects (test with http://frontendstuff.com/javascript/examples/touch.html), and much more minimal code.
 
