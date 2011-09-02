@@ -1,5 +1,5 @@
 // shouldn't need to wait DOM readiness (famous last words...)
-if(!('touchstart' in window)) {
+if(!('ontouchstart' in window)) {
   // keep track of the button state.  we don't want to fire touchmove when the mouse is up
   var isMouseDown = false;
   
