@@ -17,9 +17,9 @@ document.addEventListener('touchend', function(e){}, false);
 ## Interacting with the touch events
 The main difference with touch events are the touch event arrays, which Touché gladly simulates for you:
 
-    1 touchstart has e.touches
-    1 touchmove has e.touches and e.changedTouches
-    1 touchend has e.changedTouches
+1. touchstart has e.touches
+1. touchmove has e.touches and e.changedTouches
+1. touchend has e.changedTouches
 
 Because a mouse cursor is representative of just one finger, these simulated arrays will only contain one element (i.e. e.touches[0]) corresponding to one touch.
 
