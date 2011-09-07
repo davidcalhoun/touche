@@ -3,7 +3,9 @@ if(!('ontouchstart' in window)) {
   // keep track of the button state.  we don't want to fire touchmove when the mouse is up
   var isMouseDown = false;
   
+  var originator = null;
   var fireTouch = function(type, e) {
+    var target = originator || e.target;
     var newEvent = document.createEvent('MouseEvent');  // trying to create an actual TouchEvent will create an error
     newEvent.initMouseEvent(type, true, true, window, e.detail,
                             e.screenX, e.screenY, e.clientX, e.clientY,
@@ -19,13 +21,14 @@ if(!('ontouchstart' in window)) {
       pageY: e.pageY,
       clientX: e.clientX,
       clientY: e.clientY,
-      target: e.target,
+      target: target,
       screenX: e.screenX,
       screenY: e.screenY
     }];
 
     switch(type) {
       case 'touchstart':  // e.touches only
+        originator = target;
         newEvent.touches = newEvent.targetTouches = touchesObj;
       break;
       
@@ -34,6 +37,7 @@ if(!('ontouchstart' in window)) {
       break;
       
       case 'touchend':    // e.changedTouches only
+        originator = null;
         newEvent.changedTouches = newEvent.targetTouches = touchesObj;
       break;
       default:
