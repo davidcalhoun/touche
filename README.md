@@ -38,7 +38,5 @@ document.addEventListener('touchstart', function(e){
 }, false);
 ````
 
-(see http://frontendstuff.com/javascript/examples/touch.html for more information on the event properties)
-
 # Support
 Works on Chrome 13 and Safari 5.1 (and possibly others)
