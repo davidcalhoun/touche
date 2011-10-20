@@ -39,4 +39,7 @@ document.addEventListener('touchstart', function(e){
 ````
 
 # Support
-Works on Chrome 13 and Safari 5.1 (and possibly others)
+Tested to work on:
+*  Chrome 13+
+*  Safari 5.1+
+*  Firefox 7+
