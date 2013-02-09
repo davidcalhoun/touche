@@ -39,18 +39,19 @@
     }];
 
     switch(type) {
-      case 'touchstart':  // e.touches only
+      case 'touchstart':  // e.touches and e.changedTouches and e.targetTouches
         originator = target;
-        newEvent.touches = newEvent.targetTouches = touchesObj;
+        newEvent.touches = newEvent.changedTouches = newEvent.targetTouches = touchesObj;
       break;
       
-      case 'touchmove':   // e.touches and e.changedTouches
+      case 'touchmove':   // e.touches and e.changedTouches and e.targetTouches
         newEvent.touches = newEvent.changedTouches = newEvent.targetTouches = touchesObj;
       break;
       
       case 'touchend':    // e.changedTouches only
         originator = null;
-        newEvent.changedTouches = newEvent.targetTouches = touchesObj;
+        newEvent.changedTouches = touchesObj;
+        newEvent.touches = newEvent.targetTouches = [];
       break;
       default:
       break;
